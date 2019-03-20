@@ -27,6 +27,8 @@ public class StudentController {
 	@RequestMapping("/RegisterStudent")
 	public String registerStudents(Model m)
 	{
+		
+		System.out.println();
 		//System.out.println("Hello this is StudentController");
 		m.addAttribute("student", new Student());
 		//System.out.println("JdbcTemplate = "+template);
