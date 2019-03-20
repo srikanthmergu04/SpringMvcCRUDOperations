@@ -1,5 +1,7 @@
 package com.srikanth.Dao.Impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.context.ApplicationContext;
@@ -29,6 +31,17 @@ public class StudentDaoImplimentation {
 		
 		template.update(sql, student.getId(),student.getsName(),student.getAge(),student.getDept(),student.getCity());
 		
+	}
+	
+	public List<Student> listAllUsers() {
+		// TODO Auto-generated method stub
+		
+		//List<EmployeeDetails> emp = new ArrayList();
+		
+		String sql = "SELECT *FROM student";	
+		
+		
+		return template.query(sql, new EmployeeRowMapper());
 	}
 	
 
